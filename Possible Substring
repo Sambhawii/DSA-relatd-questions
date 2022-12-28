@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SubString2 {
+    static ArrayList<String> getsubseq(String str){
+        if(str.length() == 0){
+            ArrayList<String> arr = new ArrayList<>();
+            arr.add("");
+            return arr;
+        }
+        char currentchar = str.charAt(0);
+        String remainingstr = str.substring(1);
+        ArrayList<String> temp = getsubseq(remainingstr);
+        ArrayList<String> result = new ArrayList<>();
+        for(String s : temp){
+            result.add(s);
+            result.add(currentchar + s);
+        }
+        return result;
+    } 
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String str = scan.next();
+       // getsubseq(str);
+        System.out.println(getsubseq(str));
+        System.out.println(getsubseq(str).size());
+    }
+}
