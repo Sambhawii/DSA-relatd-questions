@@ -1,5 +1,3 @@
-package Arrays1D;
-
 public class ZigZag {
     public static void main(String[] args) {
         int arr[] = {4, 3, 7, 8, 6, 2, 1};
